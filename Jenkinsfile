@@ -4,7 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
-                    sh 'pip3 install flask'
+                    sh 'python3 -m venv env'
+                    sh 'source ./env/bin/activate'
+                    sh 'python -m pip install flask'
                 }
             }
         }
