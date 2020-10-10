@@ -6,7 +6,7 @@ pipeline {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh 'python3 -m venv env'
                     sh 'source ./env/bin/activate'
-                    sh 'python -m pip install flask --user'
+                    sh 'python -m pip install Flask --user'
                 }
             }
         }
