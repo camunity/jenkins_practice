@@ -10,6 +10,7 @@ pipeline {
         }
         stage('test') {
             steps {
+                    sh 'pwd && echo $PATH'
                     sh 'python3 -m flask --version'
                     sh 'python3 test.py'
             }
