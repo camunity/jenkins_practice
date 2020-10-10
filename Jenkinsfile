@@ -1,7 +1,7 @@
 pipeline {
     agent { docker { image 'python:3.7.2' } }
     stages {
-        stage('build) {
+        stage('build') {
             steps {
                     withEnv(["HOME=${env.WORKSPACE}"]) {
                         sh 'python3 -m venv env'
