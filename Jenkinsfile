@@ -1,13 +1,14 @@
 pipeline {
     agent { docker { image 'python:3.7.2' } }
     stages {
-        steps {
-                withEnv(["HOME=${env.WORKSPACE}"]) {
-                    sh 'python3 -m venv env'
-                    sh 'source ./env/bin/activate'
-                    sh 'python -m pip install Flask --user'
+        stage('build){
+            steps {
+                    withEnv(["HOME=${env.WORKSPACE}"]) {
+                        sh 'python3 -m venv env'
+                        sh 'source ./env/bin/activate'
+                        sh 'python -m pip install Flask --user'
+                    }
                 }
-            }
         }
         stage('test') {
             steps {
