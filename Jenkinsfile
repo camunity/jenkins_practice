@@ -12,9 +12,11 @@ pipeline {
         }
         stage('test') {
             steps {
+                withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh 'pwd && echo $PATH'
                     sh 'python3 -m flask --version'
                     sh 'python3 test.py'
+                }
             }
             post {
                 always {junit 'test-reports/*.xml'}
