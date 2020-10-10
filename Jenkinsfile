@@ -10,6 +10,7 @@ pipeline {
         }
         stage('test') {
             steps {
+                    sh 'python3 -m flask --version'
                     sh 'python3 test.py'
             }
             post {
