@@ -5,3 +5,4 @@ This project was made to help students learn the essentials of connecting Jenkin
 This project uses Jenkins running on a Docker instance.
 
 ## Resources
+* [Installing Jenkins on Docker](https://www.jenkins.io/doc/book/installing/)
